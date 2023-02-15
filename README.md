@@ -14,8 +14,8 @@ This is a web based motor insurance quotation system which allows various types 
 ### Running the Project
 > 1. Clone the repository and navigate to the root directory
 ```
-$ git clone GIT_URL
-$ cd DIR
+$ git clone https://github.com/mohit-mn7/distributed-motor-insurance.git
+$ cd distributed-motor-insurance
 ```
 > 2.	Build and run the backend services using Maven:
 ```
