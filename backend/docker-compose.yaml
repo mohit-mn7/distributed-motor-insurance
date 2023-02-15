@@ -1,0 +1,26 @@
+version: "3.3"
+services:
+  broker:
+    image: broker:latest
+    build: broker
+    environment:
+      HOSTNAME: broker
+    links:
+      - auldfellas
+      - dodgydrivers
+      - girlpower
+    ports:
+      - 8080:8080
+    restart: always
+  auldfellas:
+    image: auldfellas:latest
+    build: auldfellas
+    restart: always
+  dodgydrivers:
+    image: dodgydrivers:latest
+    build: dodgydrivers
+    restart: always
+  girlpower:
+    image: girlpower:latest
+    build: girlpower
+    restart: always

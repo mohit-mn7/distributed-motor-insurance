@@ -1,0 +1,71 @@
+<div class="container">
+  <br>
+  <h1 class="display-3">BINARY BRAINS QUOTATION SERVICE</h1>
+  <br>
+  <br>
+
+  <div style="text-align: center;">
+    <form [formGroup]="profileForm">
+      <div class="form-elements">
+        <label for="name">Name: </label>&nbsp; &nbsp;
+        <input id="name" type="text" formControlName="name" required="true">
+        &nbsp; &nbsp; &nbsp; &nbsp;
+
+        <label for="gender">Gender: </label>&nbsp; &nbsp;
+        <!-- <input id="gender" type="text" formControlName="gender"> -->
+        <select name="gender" formControlName="gender" required="true">
+          <option value="M">MALE</option>
+          <option value="F">FEMALE</option>
+        </select>
+        &nbsp; &nbsp; &nbsp; &nbsp;
+
+        <label for="age">Age: </label>&nbsp; &nbsp;
+        <input id="age" type="number" formControlName="age" required="true">
+      </div>
+      <br>
+      <br>
+      <div class="form-elements">
+        <label for="points">Points: </label>&nbsp; &nbsp;
+        <input id="points" type="number" formControlName="points" required="true">
+        &nbsp; &nbsp; &nbsp; &nbsp;
+
+        <label for="noClaims">Number of Claims: </label>&nbsp; &nbsp;
+        <input id="noClaims" type="number" formControlName="noClaims" required="true">
+        &nbsp; &nbsp; &nbsp; &nbsp;
+
+        <label for="license">License: </label>&nbsp; &nbsp;
+        <input id="license" type="text" formControlName="licenseNumber" required="true">
+        &nbsp; &nbsp; &nbsp; &nbsp;
+      </div>
+      <br>
+      <br>
+      <div>
+        <button class="btn btn-info" type="button" (click)="submitClientData()">SUBMIT</button>&nbsp; &nbsp;
+        <button class="btn btn-danger" type="button" (click)="clearForm()">CLEAR</button>
+      </div>
+    </form>
+  </div>
+  <br>
+  <br>
+  <hr>
+  <div *ngIf="showTable" class="container">
+    <h1 class="display-3">QUOTATIONS FOR YOU!</h1>
+    <br>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Company Name</th>
+          <th scope="col">Reference Number</th>
+          <th scope="col">Cost</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of quotationsList; index as i;">
+          <td>{{quotationsList[i]["company"]}}</td>
+          <td>{{quotationsList[i]["reference"]}}</td>
+          <td>$ {{quotationsList[i]["price"]}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

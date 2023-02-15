@@ -1,0 +1,38 @@
+version: "3.3"
+services:
+  broker:
+    container_name: broker-container
+    image: broker:latest
+    build: ./backend/broker
+    environment:
+      HOSTNAME: broker
+    links:
+      - auldfellas
+      - dodgydrivers
+      - girlpower
+      - frontend
+    ports:
+      - 8080:8080
+    restart: always
+  auldfellas:
+    container_name: auldfellas-container
+    image: auldfellas:latest
+    build: ./backend/auldfellas
+    restart: always
+  dodgydrivers:
+    container_name: dodgydrivers-container
+    image: dodgydrivers:latest
+    build: ./backend/dodgydrivers
+    restart: always
+  girlpower:
+    container_name: girlpower-container
+    image: girlpower:latest
+    build: ./backend/girlpower
+    restart: always
+  frontend:
+    container_name: frontend-container
+    image: frontendimage:latest
+    build: ./frontend
+    ports: 
+      - "4200:4200"
+    restart: always
