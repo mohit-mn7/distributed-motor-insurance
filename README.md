@@ -1,4 +1,4 @@
-# Insurance Quoation System
+# Insurance Quotation System
 
 This is a web based motor insurance quotation system which allows various types of clients to connect to a broker service that generates a list of quotations based on the client's information. The broker service utilizes three different insurance service implementations - Girl Power, Dodgy Drivers, and Auld Fellas' - to produce the list of quotations. This system allows clients to receive multiple quotes from different insurance providers and compare them to make an informed decision.
 
